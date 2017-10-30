@@ -1719,3 +1719,90 @@ h6 {
 		margin: 20px;
 	}
 }
+.pricing{
+	h2{
+		text-align: center;
+	}
+	ol{
+		text-align: left;
+	}
+}
+.offers{
+	text-align: center;
+	.offer-box{
+
+	}
+}
+	.price-box {
+		margin: 46px;
+border: 2px #000 solid;
+padding: 18px;
+text-align: center;
+	    text-align: center;
+	    padding: 30px;
+	    @include border-radius(5px);
+	    margin-bottom: 40px;
+	    position: relative;
+	    &.popular {
+	    	border: 2px solid $brand-secondary;
+	    	.popular-text {
+	    		top: 0;
+	    		left: 50%;
+	    		margin-left: -65px;
+	    		margin-top: -2em;
+				position: absolute;
+				padding: 4px 20px;
+				background: $brand-secondary;
+				color: $brand-white;
+				@include border-radius(4px);
+				&:after {
+				   content: "";
+				   position: absolute;
+				   top: 100%;
+				   left: 50%;
+				   margin-left: -10px;
+				   border-top: 10px solid black;
+				   border-top-color: $brand-secondary;
+				   border-left: 10px solid transparent;
+				   border-right: 10px solid transparent;
+				}
+	    	}
+	    }
+	}
+	.pricing-plan {
+		margin: 0;
+		padding: 0;
+		font-size: 15px;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+		font-weight: 700;
+	}
+	.price {
+		font-size: 50px;
+		color: $brand-black;
+		.currency {
+			font-size: 20px;
+			top: -1.2em;
+		}
+		small {
+			font-size: 16px;
+		}
+	}
+	.pricing-info {
+		padding: 0;
+		margin: 0 0 30px 0;
+		li {
+			padding: 0;
+			margin: 0;
+			list-style: none;
+			text-align: center;
+		}
+	}
+#fh5co-faq{
+	position: relative;
+	    top: 46px;
+		padding: 8em 0;
+	@media screen and (max-width: $screen-sm) {
+		padding: 3em 0;
+	}
+}
