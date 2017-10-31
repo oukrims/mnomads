@@ -1682,18 +1682,20 @@ h6 {
 
 			list-style-type: none;
 			text-align: center;
-
+			margin: 0;
+			padding: 0;
 	}
 	h1{
 		text-align: center;
 	}
 	.img-icon{
-		width: 172px;
-		height: 176px;
-		z-index: -900;
-		position: absolute;
-		top: 111px;
-		opacity: 0.1;
+		width: 100px;
+    height: 100px;
+    z-index: -900;
+    position: absolute;
+    top: 183px;
+    left: 269px;
+    opacity: 0.1;
 	}
 }
 .process{

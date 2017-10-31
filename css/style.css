@@ -1262,15 +1262,18 @@ h6 {
     border: 4px #000 solid; }
   .fh5co-service ul {
     list-style-type: none;
-    text-align: center; }
+    text-align: center;
+    margin: 0;
+    padding: 0; }
   .fh5co-service h1 {
     text-align: center; }
   .fh5co-service .img-icon {
-    width: 172px;
-    height: 176px;
+    width: 100px;
+    height: 100px;
     z-index: -900;
     position: absolute;
-    top: 111px;
+    top: 183px;
+    left: 269px;
     opacity: 0.1; }
 
 .process h1 {
@@ -1363,3 +1366,11 @@ h6 {
     margin: 0;
     list-style: none;
     text-align: center; }
+
+#fh5co-faq {
+  position: relative;
+  top: 46px;
+  padding: 8em 0; }
+  @media screen and (max-width: 768px) {
+    #fh5co-faq {
+      padding: 3em 0; } }
