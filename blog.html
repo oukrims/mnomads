@@ -8,8 +8,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Marrakech nomads , Become location independent" />
 	<meta name="author" content="salah oukrim" />
-
-
 	<link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
 	<link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
 	<link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.png">
@@ -28,6 +26,7 @@
 	<meta name="msapplication-TileImage" content="images/favicon/ms-icon-144x144.png">
 	<meta name="theme-color" content="#ffffff">
 
+
 	<!-- Facebook and Twitter integration -->
 	<meta property="og:title" content="" />
 	<meta property="og:image" content="" />
@@ -40,7 +39,8 @@
 	<meta name="twitter:card" content="" />
 
 	<!-- <link href='https://fonts.googleapis.com/css?family=Work+Sans:400,300,600,400italic,700' rel='stylesheet' type='text/css'> -->
-  <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="d6654536-dfcc-4d1b-8377-dd750e71e6cd";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+	<script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="d6654536-dfcc-4d1b-8377-dd750e71e6cd";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
 
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="css/animate.css">
@@ -75,13 +75,13 @@
 					</div>
 					<div class="col-xs-10 text-right menu-1">
 						<ul>
-              <li class="active"><a href="index.html">Home</a></li>
-              <li><a href="the-experience.html">The experience</a></li>
-              <li><a href="about.html">About</a></li>
-              <li><a href="pricing.html">Pricing</a></li>
-              <li><a href="marrakech.html">Marrakech</a></li>
-              <li><a href="faq.html">FAQ</a></li>
-              <li class="btn-cta"><a href="apply.html"><span>Apply Now</span></a></li>
+							<li class="active"><a href="index.html">Home</a></li>
+							<li><a href="the-experience.html">The experience</a></li>
+							<li><a href="about.html">About</a></li>
+							<li><a href="pricing.html">Pricing</a></li>
+							<li><a href="marrakech.html">Marrakech</a></li>
+							<li><a href="faq.html">FAQ</a></li>
+							<li class="btn-cta"><a href="apply.html"><span>Apply Now</span></a></li>
 						</ul>
 					</div>
 				</div>
@@ -89,34 +89,40 @@
 			</div>
 		</nav>
 
-		<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/marrakech.jpg);background-attachment:fixed;">
+		<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/pricing.jpg);">
 			<div class="overlay"></div>
 			<div class="container">
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center">
 						<div class="display-t">
 							<div class="display-tc  " data-animate-effect="fadeIn">
-								<h1>Marrakesh</h1>
+								<h1>Blog</h1>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</header>
-		<div class="container marrakech" style="position:relative;top:40px;">
-				<div class="container" style="text-align:center;padding:20px;margin:40px;">
+	<div class="container">
+		<div id="app">
 
-					<h1>Marrakech</h1>
-					<p>
-						Marrakech (English spelling being Marrakesh) is an exciting city filled with colour and promise. Stalls, food shacks, carpet, leather, henna, bartering and culture galore. Being Morocco’s capital this beautiful city had a major influx of tourism and economic value. The city is mainly populated by Sunni Muslims, followed by Christians and Jews. A lot of locals are at least bilingual speaking Arabic and a Berber language, Arabic of Moroccan dialect or French and of course with that many that have unbelievable English skills making this a diverse destination like no other.
-					</p>
-					<iframe src="https://player.vimeo.com/video/69106224" width="640" height="272" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-<p><a href="https://vimeo.com/69106224">Postcards from the four corners: Marrakech</a> from <a href="https://vimeo.com/philipbloom">Philip Bloom</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+		<div class="post-wrapper">
+			<template v-for="post in posts">
+				<div class="post">
+					<h2 class="post-title" v-html="post.title.rendered"></h2>
+					<a v-if="post._embedded['wp:featuredmedia'][0].media_details.sizes['large']" :href="post.link">
+						<img :src="post._embedded['wp:featuredmedia'][0].media_details.sizes['large'].source_url" />
+					</a>
+					<div class="excerpt" v-if="post.excerpt.rendered" v-html="post.excerpt.rendered"></div>
+					<div class="entry-meta" v-if="post._embedded.author[0]">
+						<a class="author-wrap" :href="post._embedded.author[0].link"><img class="avatar" :src="post._embedded.author[0].avatar_urls['48']" />by&nbsp; {{ post._embedded.author[0].name }} </a>
+						<a class="button read-more" :href="post.link">Read More &raquo;</a>
+					</div>
 				</div>
-
-
-
+			</template>
 		</div>
+	</div>
+	</div>
 		<br>
 		<br>
 		<br>
@@ -208,7 +214,6 @@
 		<script src="js/jquery.waypoints.min.js"></script>
 		<!-- Main -->
 		<script src="js/main.js"></script>
-		<script src="js/mail-list.js"></script>
 
 		</body>
-		</html>
+	</html>
