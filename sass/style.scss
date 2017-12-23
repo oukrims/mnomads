@@ -75,6 +75,7 @@ $form-group-margin-bottom: 30px !default; // Mixin
 // Import
 @import 'bootstrap/mixins';
 @import 'bootstrap/variables';
+@import 'responsive';
 /* =======================================================
 *
 * 	Template Style
@@ -1863,41 +1864,7 @@ h6 {
 	text-align: center;
 }
 /* Portrait and Landscape */
-@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
-	.img-icon {
-		width: 80px !important;
-		height: 80px !important;
-		left: 74px !important;
-		top: 215px !important;
-	}
 
-	.modal {
-		width: 395px !important;
-		height: 400px !important;
-		display: block !important;
-		margin: 50% 0 0 -300px !important;
-		position: relative !important;
-		top: 1% !important;
-		left: 76% !important;
-	}
-
-	.features {
-		position: relative;
-		left: 28px !important;
-		top: 30px;
-	}
-
-	iframe {
-		width: 90%;
-	}
-
-	.process {
-		h3 {
-			text-align: center;
-			margin: 30px;
-		}
-	}
-}
 
 .page-wrapper {}
 
