@@ -223,3 +223,10 @@ $(document).ready(function() {
 		 return false;
 	});
 });
+
+$(function(){
+	setInterval(function() {
+			$('.fh5co-header').animate( { backgroundImage: '../images/bg1.jpg' }, 1000)
+			.animate( { backgroundImage: '../images/marrakech2.jpg' }, 1000);
+			}, 1000);
+	 });

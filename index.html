@@ -86,14 +86,14 @@
 			</div>
 		</nav>
 
-	<header id="fh5co-header" class="fh5co-cover" role="banner" style="background-image:url(images/Marrakech-Nightlife-Pictures.jpg);background-attachment:fixed;background-position:center;">
+	<header id="fh5co-header" class="fh5co-cover" role="banner">
 		<div class="overlay"></div>
 		<div class="container">
 			<div class="row">
 				<div class="col-md-8 col-md-offset-2 text-center">
 					<div class="display-t">
 						<div class="display-tc" data-animate-effect="fadeIn">
-							<h1>Start Your Journey</h1>
+							<h1 class="animate-title"></h1>
 							<h2>Become location independent!</h2>
 
 						</div>
@@ -332,6 +332,31 @@ We send a confirmation, you agree. Let’s get on a plane for the experience of 
 	<!-- Main -->
 	<script src="js/main.js"></script>
 	<script src="js/mail-list.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery.typeit/4.4.0/typeit.min.js"></script>
+<script type="text/javascript">
+		$('.animate-title').typeIt({
+			 strings: ["Hey NOMAD,", "Marrakech is your next destination!"],
+			 speed: 90,
+			 autoStart: false,
+			 loop:true
+		});
+		$(window).load(function() {          
+  var i =0;
+  var images = ['images/marrakech.jpg','images/marrakech1.jpg','images/marrakech2.jpg'];
+  var image = $('#fh5co-header');
+                //Initial Background image setup
+  image.css('background-image', 'url(images/Marrakech-Nightlife-Pictures.jpg)');
+                //Change image at regular intervals
+  setInterval(function(){  
+   image.fadeOut(0, function () {
+   image.css('background-image', 'url(' + images [i++] +')');
+   image.fadeIn(1000);
+   });
+   if(i == images.length)
+    i = 0;
+  }, 5000);           
+ });
 
+</script>
 	</body>
 </html>
