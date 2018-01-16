@@ -348,9 +348,9 @@ We send a confirmation, you agree. Let’s get on a plane for the experience of 
   image.css('background-image', 'url(images/Marrakech-Nightlife-Pictures.jpg)');
                 //Change image at regular intervals
   setInterval(function(){  
-   image.fadeOut(0, function () {
+   image.fade(0, function () {
    image.css('background-image', 'url(' + images [i++] +')');
-   image.fadeIn(1000);
+   image.fadeIn(0);
    });
    if(i == images.length)
     i = 0;
